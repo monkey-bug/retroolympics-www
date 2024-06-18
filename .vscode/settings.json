@@ -1,0 +1,12 @@
+{
+  "npm.scriptExplorerAction": "open",
+  "npm.autoDetect": "on",
+  "npm.packageManager": "pnpm",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "eslint.workingDirectories": ["frontend"],
+  "eslint.validate": ["typescript", "typescriptreact"],
+  "typescript.tsdk": "./frontend/node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}
