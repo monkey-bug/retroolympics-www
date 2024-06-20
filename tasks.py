@@ -14,6 +14,7 @@ def update_combined_reqs(c):
         "pip-compile backend/requirements.in backend/requirements-dev.in -o backend/requirements-combined.txt"
     )
 
+
 # Run
 @task
 def run_back(c):

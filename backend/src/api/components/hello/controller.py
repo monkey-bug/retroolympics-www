@@ -1,5 +1,6 @@
-from api.consts import COMMON_API_PREFIX
 from flask import Blueprint, jsonify
+
+from api.consts import COMMON_API_PREFIX
 
 hello_api = Blueprint("hello_api", __name__, url_prefix=COMMON_API_PREFIX + "/hello")
 
