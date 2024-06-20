@@ -1,39 +1,28 @@
 {
-    "name": "retro_olympics_webapp",
-    "dockerComposeFile": "docker-compose.yml",
-    "workspaceFolder": "/workspace",
-    "service": "webapp",
-    "customizations": {
-        "vscode": {
-            "settings": {
-                "python.linting.pylintEnabled": false,
-                "python.linting.flake8Enabled": true,
-                "python.linting.flake8Args": [
-                    "--max-line-length=88"
-                ],
-                "python.linting.mypyEnabled": true,
-                "python.formatting.provider": "black",
-                "python.sortImports.args": [
-                    "--profile",
-                    "black"
-                ],
-                "python.analysis.autoImportCompletions": false,
-                "[python]": {
-                    "editor.codeActionsOnSave": {
-                        "source.organizeImports": true
-                    }
-                }
-            },
-            "extensions": [
-                "ms-python.python",
-                "ms-python.vscode-pylance",
-                "eamodio.gitlens",
-                "esbenp.prettier-vscode"
-            ]
+  "name": "retro_olympics_webapp",
+  "dockerComposeFile": "docker-compose.yml",
+  "workspaceFolder": "/workspace",
+  "service": "webapp",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "python.linting.pylintEnabled": false,
+        "python.linting.mypyEnabled": false,
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true
         }
-    },
-    "remoteUser": "root",
-    "remoteEnv": {
-        "PYTHONPATH": "/workspace/backend/src"
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter"
+      ]
     }
+  },
+  "remoteUser": "root",
+  "remoteEnv": {
+    "PYTHONPATH": "/workspace/backend/src"
+  }
 }
