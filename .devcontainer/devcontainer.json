@@ -6,8 +6,6 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "python.linting.pylintEnabled": false,
-        "python.linting.mypyEnabled": false,
         "[python]": {
           "editor.defaultFormatter": "ms-python.black-formatter",
           "editor.formatOnSave": true,
