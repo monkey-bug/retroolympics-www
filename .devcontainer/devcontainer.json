@@ -15,14 +15,16 @@
             "source.organizeImports": "always"
           }
         },
-        "isort.args": ["--profile", "black"]
+        "isort.args": ["--profile", "black"],
+        "ruff.nativeServer": true
       },
       "extensions": [
         "eamodio.gitlens",
         "ms-python.python",
         "ms-python.vscode-pylance",
         "ms-python.black-formatter",
-        "ms-python.isort"
+        "ms-python.isort",
+        "charliermarsh.ruff"
       ]
     }
   },
