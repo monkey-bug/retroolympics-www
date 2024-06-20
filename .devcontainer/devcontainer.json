@@ -10,14 +10,19 @@
         "python.linting.mypyEnabled": false,
         "[python]": {
           "editor.defaultFormatter": "ms-python.black-formatter",
-          "editor.formatOnSave": true
-        }
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+          }
+        },
+        "isort.args": ["--profile", "black"]
       },
       "extensions": [
         "eamodio.gitlens",
         "ms-python.python",
         "ms-python.vscode-pylance",
-        "ms-python.black-formatter"
+        "ms-python.black-formatter",
+        "ms-python.isort"
       ]
     }
   },
