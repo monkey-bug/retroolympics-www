@@ -1,0 +1,33 @@
+{
+  "name": "retro_olympics_webapp",
+  "dockerComposeFile": "docker-compose.yml",
+  "workspaceFolder": "/workspace",
+  "service": "webapp",
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.black-formatter",
+          "editor.formatOnSave": true,
+          "editor.codeActionsOnSave": {
+            "source.organizeImports": "always"
+          }
+        },
+        "isort.args": ["--profile", "black"],
+        "ruff.nativeServer": true
+      },
+      "extensions": [
+        "eamodio.gitlens",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.black-formatter",
+        "ms-python.isort",
+        "charliermarsh.ruff"
+      ]
+    }
+  },
+  "remoteUser": "root",
+  "remoteEnv": {
+    "PYTHONPATH": "/workspace/backend/src"
+  }
+}
