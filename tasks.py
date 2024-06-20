@@ -1,5 +1,6 @@
-from api import get_api
 from invoke import task
+
+from api import get_api
 
 
 # Python reqs
