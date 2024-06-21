@@ -1,21 +1,17 @@
 {
-  "name": "retro_olympics_webapp",
+  "name": "retro_olympics",
   "dockerComposeFile": "docker-compose.yml",
-  "workspaceFolder": "/workspace",
   "service": "webapp",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "20.15.0",
+      "nvmVersion": "latest"
+    }
+  },
   "customizations": {
     "vscode": {
-      "settings": {
-        "[python]": {
-          "editor.defaultFormatter": "ms-python.black-formatter",
-          "editor.formatOnSave": true,
-          "editor.codeActionsOnSave": {
-            "source.organizeImports": "always"
-          }
-        },
-        "isort.args": ["--profile", "black"],
-        "ruff.nativeServer": true
-      },
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
@@ -27,6 +23,7 @@
   },
   "remoteUser": "root",
   "remoteEnv": {
-    "PYTHONPATH": "/workspace/backend/src"
-  }
+    "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/backend/src"
+  },
+  "postCreateCommand": "cd backend/ && pip install -r requirements-combined.txt"
 }
