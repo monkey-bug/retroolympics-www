@@ -8,5 +8,14 @@
   "eslint.workingDirectories": ["frontend"],
   "eslint.validate": ["typescript", "typescriptreact"],
   "typescript.tsdk": "./frontend/node_modules/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "always"
+    }
+  },
+  "isort.args": ["--profile", "black"],
+  "ruff.nativeServer": true
 }

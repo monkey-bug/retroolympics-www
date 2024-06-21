@@ -1,21 +1,17 @@
 {
-  "name": "retro_olympics_webapp",
+  "name": "retro_olympics",
   "dockerComposeFile": "docker-compose.yml",
-  "workspaceFolder": "/workspace",
   "service": "webapp",
+  "workspaceFolder": "/workspace",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "nodeGypDependencies": true,
+      "version": "20.15.0",
+      "nvmVersion": "latest"
+    }
+  },
   "customizations": {
     "vscode": {
-      "settings": {
-        "[python]": {
-          "editor.defaultFormatter": "ms-python.black-formatter",
-          "editor.formatOnSave": true,
-          "editor.codeActionsOnSave": {
-            "source.organizeImports": "always"
-          }
-        },
-        "isort.args": ["--profile", "black"],
-        "ruff.nativeServer": true
-      },
       "extensions": [
         "ms-python.python",
         "ms-python.vscode-pylance",
