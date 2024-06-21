@@ -2,7 +2,7 @@
   "name": "retro_olympics",
   "dockerComposeFile": "docker-compose.yml",
   "service": "webapp",
-  "workspaceFolder": "/workspace",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
   "features": {
     "ghcr.io/devcontainers/features/node:1": {
       "nodeGypDependencies": true,
@@ -23,6 +23,7 @@
   },
   "remoteUser": "root",
   "remoteEnv": {
-    "PYTHONPATH": "/workspace/backend/src"
-  }
+    "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/backend/src"
+  },
+  "postCreateCommand": "cd backend/ && pip install -r requirements-combined.txt"
 }

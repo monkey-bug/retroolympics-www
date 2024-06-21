@@ -3,11 +3,11 @@ version: "3.8"
 services:
   webapp:
     build:
-      context: ..
-      dockerfile: .devcontainer/Dockerfile
+      context: .
+      dockerfile: Dockerfile
     entrypoint: ["tail", "-f", "/dev/null"]
     volumes:
-      - ..:/workspace
+      - ../..:/workspaces:cached
     command: sleep infinity
     network_mode: service:db
   db:
