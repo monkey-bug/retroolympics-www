@@ -28,14 +28,14 @@ This guide will walk you through the steps to run this repository inside a Devel
 ### Setup the backend
 1. Install `python 3.12`, the instructions may vary by OS and distribution.
 2. Make sure you have `pip` installed and linked to correct version of python.
-3. Install the necessary python libraries with the following command: `pip install -r backend/src/requirements-combined.txt`
+3. Install the necessary python libraries with the following command: `pip install -r backend/requirements-combined.txt`
 
 ### Setup the frontend
 TODO
 
 ## Run the application
 ### Run the backend alone
-- Execute the following command: `invoke run-back`
+- Execute the following command: `invoke run-back` while in the folder that has tasks.py
 
 - Check the hello world endpoint: `http://127.0.0.1:5000/api/v1/hello/`
 
