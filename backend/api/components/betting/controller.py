@@ -31,3 +31,7 @@ def handle_post():
                             , 400)
     else:
         return render_template("notallowed.html")
+    
+@betting_api.route("/datatest", methods=["GET", "POST", "PUT"])
+def handle_test():
+    pass

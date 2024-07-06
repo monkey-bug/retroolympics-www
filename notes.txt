@@ -1,0 +1,1 @@
+to connect to postgres from python: conn = psycopg2.connect(host="db", user="postgres", dbname="[the name of a database]")
