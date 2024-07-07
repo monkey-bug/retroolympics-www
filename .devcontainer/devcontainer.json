@@ -23,7 +23,7 @@
   },
   "remoteUser": "root",
   "remoteEnv": {
-    "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/backend/src"
+    "PYTHONPATH": "/workspaces/${localWorkspaceFolderBasename}/backend"
   },
   "postCreateCommand": "cd backend/ && pip install -r requirements-combined.txt"
 }
