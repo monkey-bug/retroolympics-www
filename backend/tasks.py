@@ -12,7 +12,7 @@ def update_app_reqs(c):
 @task
 def update_combined_reqs(c):
     c.run(
-        "pip-compile backend/requirements.in backend/requirements-dev.in -o backend/requirements-combined.txt"
+        "pip-compile requirements.in requirements-dev.in -o requirements-combined.txt"
     )
 
 

@@ -21,6 +21,9 @@ services:
       - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
+      POSTGRES_DB: betting
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
     ports:
       - "8001:5432"
 
