@@ -9,7 +9,12 @@ betting_api = Blueprint("betting_api", __name__, url_prefix=COMMON_API_PREFIX + 
 
 @betting_api.route("/", methods=["GET"])
 def get_collections():
-    return jsonify({"message": "Hello World ! From the retro olympics betting backend !"}), 200
+    try:
+        responseobject = api.model.betting.getAll()
+        return jsonify(responseobject)
+    except Exception as e:
+        print(e)
+        return Response("something went wrong", 500)
 
 
 
@@ -22,14 +27,19 @@ def handle_post():
             matchid = content["matchid"]
             teamid = content["teamid"]
             amount = content["amount"]
-            print(f"userid = {userid}, matchid={matchid}, teamid{teamid}, amount={amount}")
-            api.model.betting.insertBet(userid, matchid, teamid, amount)
-            return Response("inserted", 200)
         except Exception as e:
             print(e)
             return Response(f"""content_type="bad request, please supply the following: \"user\", \"matchid\", \"teamid\"and \"amount\"
                             in json form with a content-type json header"""
                             , 400)
+        try:
+            print(f"userid = {userid}, matchid={matchid}, teamid{teamid}, amount={amount}")
+            api.model.betting.insertBet(userid, matchid, teamid, amount)
+            return Response("inserted", 200)
+        except Exception as e:
+            print(e)
+            return Response(f"""something went wrong with inserting the bet in the database"""
+                            , 500)
     else:
         return render_template("notallowed.html")
     
