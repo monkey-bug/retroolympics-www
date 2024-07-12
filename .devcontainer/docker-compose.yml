@@ -7,7 +7,7 @@ services:
       dockerfile: Dockerfile
     entrypoint: ["tail", "-f", "/dev/null"]
     volumes:
-      - ../..:/workspaces:cached
+      - ..:/workspaces:cached
     command: sleep infinity
     #network_mode: service:db
     ports: 
@@ -21,7 +21,7 @@ services:
       - postgres-data:/var/lib/postgresql/data
     environment:
       POSTGRES_HOST_AUTH_METHOD: trust
-      POSTGRES_DB: betting
+      POSTGRES_DB: retroolympics
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
