@@ -41,7 +41,7 @@ def handle_post():
             return Response(f"""something went wrong with inserting the bet in the database"""
                             , 500)
     else:
-        return render_template("notallowed.html")
+        return Response("Only posts are allowed right now", 400)
     
 @betting_api.route("/datatest", methods=["GET", "POST", "PUT"])
 def handle_test():
