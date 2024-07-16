@@ -2,11 +2,11 @@ import Link from "next/link";
 
 export default function Navbar(){
     return (
-    <div className="w-full h-64">
+    <div className="w-full bg-gray-900">
         <nav>
-            <ul className="flex justify-between text-2xl bg-purple-500">
-                <li className="mr-6">
-                    <Link className="text-blue-500 hover:text-blue-800" href="/">Home</Link>
+            <ul className="flex h-16 justify-between items-center text-2x">
+                <li className="mx-6">
+                    <Link className="text-blue-500 hover:text-blue-1000" href="/">Home</Link>
                 </li>
                 <li className="mr-6">
                     <Link className="text-blue-500 hover:text-blue-800" href="/">Teams</Link>
@@ -26,7 +26,7 @@ export default function Navbar(){
                 <li className="mr-6">
                     <Link className="text-blue-500 hover:text-blue-800" href="/">History</Link>
                 </li>
-            </ul>    
+            </ul>
         </nav>      
     </div>
     );
