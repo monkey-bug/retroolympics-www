@@ -1,10 +1,9 @@
-from flask import Blueprint, jsonify, request, render_template, Response
+from flask import Blueprint, jsonify, request, Response
 
 from api.consts import COMMON_API_PREFIX
 import api.model.betting
 
-betting_api = Blueprint("betting_api", __name__, url_prefix=COMMON_API_PREFIX + "/betting",
-                        template_folder="templates")
+betting_api = Blueprint("betting_api", __name__, url_prefix=COMMON_API_PREFIX + "/betting")
 
 
 @betting_api.route("/", methods=["GET"])
