@@ -1,5 +1,6 @@
-from api import get_api
 from invoke import task
+
+from api import get_api
 
 
 # Python reqs
@@ -18,4 +19,4 @@ def update_combined_reqs(c):
 # Run
 @task
 def run_back(c):
-    get_api().run()
+    get_api().run("0.0.0.0")
