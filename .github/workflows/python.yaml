@@ -23,8 +23,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements-combined.txt
       - name: Run lint with ruff
-        run: ruff backend
+        run: ruff .
       - name: Check formatting with black
-        run: black --check backend
+        run: black --check .
       - name: Check imports with isort
-        run: isort --check backend
+        run: isort --check .
