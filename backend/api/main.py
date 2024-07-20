@@ -1,7 +1,6 @@
-from flask import Flask
-
-from api.components.hello import hello_api
 from api.components.betting import betting_api
+from api.components.hello import hello_api
+from flask import Flask
 
 api: Flask | None = None
 

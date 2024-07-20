@@ -1,5 +1,6 @@
 import psycopg2
-from .main import datacon, insertBet, getAll, removeBet
+
+from .main import datacon, getAll, insertBet, removeBet
 
 __all__ = ["insertBet", "removeBet", "getAll"]
 

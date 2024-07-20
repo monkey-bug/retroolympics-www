@@ -1,5 +1,5 @@
-from api.model.betting import getAll, insertBet
 from api.consts import COMMON_API_PREFIX
+from api.model.betting import getAll, insertBet
 from flask import Blueprint, Response, jsonify, request
 
 betting_api = Blueprint(
