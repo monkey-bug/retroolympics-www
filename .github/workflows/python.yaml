@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: '3.12'
       - name: Install dependencies
-        run: pip install -r ./backend/requirements-combined.txt
+        run: ls
       - name: Run lint with ruff
         run: ruff backend
       - name: Check formatting with black
