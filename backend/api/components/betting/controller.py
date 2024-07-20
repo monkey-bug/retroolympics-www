@@ -4,10 +4,7 @@ from api.consts import COMMON_API_PREFIX
 from api.model.betting import getAll, insertBet
 
 betting_api = Blueprint(
-    "betting_api",
-    __name__,
-    url_prefix=COMMON_API_PREFIX + "/betting",
-    template_folder="templates",
+    "betting_api", __name__, url_prefix=COMMON_API_PREFIX + "/betting"
 )
 
 
