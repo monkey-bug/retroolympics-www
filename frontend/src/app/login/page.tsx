@@ -1,4 +1,3 @@
-import { FormEvent } from "react";
 import { cookies } from "next/headers";
 
 export default function LoginPage() {
