@@ -5,7 +5,7 @@ from .main import datacon, getAll, insertBet, removeBet
 __all__ = ["insertBet", "removeBet", "getAll"]
 
 
-createTableString = """
+createBettingTableString = """
                     CREATE TABLE bettingtest (
                         id SERIAL PRIMARY KEY,
                         userid VARCHAR,
@@ -15,12 +15,24 @@ createTableString = """
                     );
                     """
 
+createUserTableString = """
+                        CREATE TABLE bettingusers (
+                            userid VARCHAR,
+                            points FLOAT,
+                            PRIMARY KEY (userid)
+                        );
+                        """
 
 def __init__():
     with datacon.cursor() as curs:
         try:
-            curs.execute(createTableString)
-        except psycopg2.errors.DuplicateTable:
+            curs.execute(createBettingTableString)
+        except psycopg2.errors.DuplicateTable as e:
+            print("duplicate table encountered")
+            pass
+        try:
+            curs.execute(createUserTableString)
+        except psycopg2.errors.DuplicateTable as e:
             print("duplicate table encountered")
             pass
 

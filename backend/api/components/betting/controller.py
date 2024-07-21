@@ -1,7 +1,7 @@
 from flask import Blueprint, Response, jsonify, request
 
 from api.consts import COMMON_API_PREFIX
-from api.model.betting import getAll, insertBet
+from api.model.betting import GetAllBets, insertBet
 
 betting_api = Blueprint(
     "betting_api", __name__, url_prefix=COMMON_API_PREFIX + "/betting"
@@ -11,7 +11,7 @@ betting_api = Blueprint(
 @betting_api.route("/", methods=["GET"])
 def get_collections():
     try:
-        responseobject = getAll()
+        responseobject = getAllBets()
         return jsonify(responseobject)
     except Exception as e:
         print(e)
