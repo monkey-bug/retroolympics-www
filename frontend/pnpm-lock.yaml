@@ -3114,8 +3114,6 @@ snapshots:
 
   pirates@4.0.6: {}
 
-  pnpm@9.5.0: {}
-
   possible-typed-array-names@1.0.0: {}
 
   postcss-import@15.1.0(postcss@8.4.39):
