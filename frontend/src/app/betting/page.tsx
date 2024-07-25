@@ -1,8 +1,7 @@
 import { Team, teams} from "./teams";
-import { matches } from "./matches";
-import matchCard from "./matchCard";
+import { matches, Match } from "./matches";
+import MatchCard from "./matchCard";
 export default function BettingPage(){
-    
 
     const matchesList = matches.map((element) => {
         const undefinedTeam: Team = { "id": -1, "name" : "undefined team" }
@@ -17,8 +16,8 @@ export default function BettingPage(){
 
         return (
 
-                <div>
-                    {matchCard(element)}
+                <div key={element.id}>
+                    <MatchCard match={element}/>
                 </div>
 
         )
