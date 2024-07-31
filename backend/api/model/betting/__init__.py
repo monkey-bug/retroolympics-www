@@ -1,8 +1,8 @@
 import psycopg2
 
-from .main import datacon, getAll, insertBet, removeBet
+from .main import datacon, getAllBets, insertBet, removeBet
 
-__all__ = ["insertBet", "removeBet", "getAll"]
+__all__ = ["insertBet", "removeBet", "getAllBets"]
 
 
 createBettingTableString = """

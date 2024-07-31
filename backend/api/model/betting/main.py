@@ -1,7 +1,5 @@
 from api.model.database import bettingconn as datacon
 
-datacon.autocommit = True
-
 
 def insertBet(userid, matchid, teamid, amount): #TODO make this subtract from the usertable points first
     with datacon.cursor() as curs:
