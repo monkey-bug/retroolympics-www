@@ -1,14 +1,14 @@
-from .main import datacon, getAllMatches, getMatch, getMatchesByTeam
+from .main import datacon, getAllMatches, getMatch, getMatchesByTeam, insertMatch
 import psycopg2
 
-__all__=["getAllMatches", "getMatch", "getMatchesByTeam"]
+__all__=["getAllMatches", "getMatch", "getMatchesByTeam", "insertMatch"]
 
 
 createMatchTableString = """
                     CREATE TABLE matches (
                         matchid SERIAL PRIMARY KEY,
                         teamid1 INT,
-                        teamid2 INT,
+                        teamid2 INT
                     );
                     """
 

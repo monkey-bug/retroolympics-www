@@ -36,7 +36,7 @@ def getMatchesByTeam(teamid):
 def insertMatch(teamid1, teamid2):
     with datacon.cursor() as curs:
         curs.execute(
-    f"""
-    INSERT INTO matches (teamid1, teamid2) VALUES({teamid1}, {teamid2});
-    """
-    )
+        f"""
+        INSERT INTO matches (teamid1, teamid2) VALUES({teamid1}, {teamid2});
+        """
+        )
