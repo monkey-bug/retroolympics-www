@@ -20,9 +20,9 @@ def api_get_all():
 def api_insertMatch():
     if request.method == "POST":
         try:
-            content = request.json
-            teamid1 = content["teamid1"]
-            teamid2 = content["teamid2"]
+            jsoncontent = request.json
+            teamid1 = jsoncontent["teamid1"]
+            teamid2 = jsoncontent["teamid2"]
         except Exception as e:
             print(e)
             return Response("Bad reequest", 400)
