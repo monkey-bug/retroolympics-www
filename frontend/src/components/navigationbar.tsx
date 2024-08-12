@@ -1,6 +1,18 @@
+import { cookies } from "next/headers";
 import Link from "next/link";
 
 export default function Navbar() {
+  const userName = cookies().get("user");
+
+
+  function userElement(){
+    if(userName !=undefined){
+      const userString = userName.value;
+      return (<li>{userString}</li>)
+    } else{
+      return (<li>UNKNOWN</li>)
+    }
+  }
   return (
     <div className="w-full bg-gray-900">
       <nav>
@@ -45,6 +57,7 @@ export default function Navbar() {
               History
             </Link>
           </li>
+          {userElement()}
         </ul>
       </nav>
     </div>
