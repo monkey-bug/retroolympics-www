@@ -1,7 +1,7 @@
 from flask import Blueprint, Response, jsonify, request
 
 from api.consts import COMMON_API_PREFIX
-from api.model.betting import getAllBets, insertBet, removeBet
+from api.model.betting import getAllBets, insertBet
 
 betting_api = Blueprint(
     "betting_api", __name__, url_prefix=COMMON_API_PREFIX + "/betting"

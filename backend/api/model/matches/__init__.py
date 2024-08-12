@@ -19,7 +19,7 @@ def __init__():
     with datacon.cursor() as curs:
         try:
             curs.execute(createMatchTableString)
-        except psycopg2.errors.DuplicateTable as e:
+        except psycopg2.errors.DuplicateTable:
             print("duplicate table encountered")
             pass
 __init__()

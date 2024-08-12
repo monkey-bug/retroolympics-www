@@ -1,4 +1,4 @@
-from flask import Blueprint, Response, jsonify, request
+from flask import Blueprint, Response, request
 
 from api.consts import COMMON_API_PREFIX
 from api.model.matches import getAllMatches, getMatch, getMatchesByTeam, insertMatch
