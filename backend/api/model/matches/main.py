@@ -1,5 +1,6 @@
 from api.model.database import bettingconn as datacon
 
+
 def getAllMatches():
     with datacon.cursor() as curs:
         curs.execute(
@@ -9,6 +10,7 @@ def getAllMatches():
         )
         res = curs.fetchall()
     return res
+
 
 def getMatch(matchid):
     with datacon.cursor() as curs:
@@ -20,6 +22,7 @@ def getMatch(matchid):
         )
         res = curs.fetchall()
     return res
+
 
 def getMatchesByTeam(teamid):
     with datacon.cursor() as curs:
@@ -36,7 +39,7 @@ def getMatchesByTeam(teamid):
 def insertMatch(teamid1, teamid2):
     with datacon.cursor() as curs:
         curs.execute(
-        f"""
-        INSERT INTO matches (teamid1, teamid2) VALUES({teamid1}, {teamid2});
-        """
+            f"""
+            INSERT INTO matches (teamid1, teamid2) VALUES({teamid1}, {teamid2});
+            """
         )

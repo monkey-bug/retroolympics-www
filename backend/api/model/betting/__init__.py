@@ -6,22 +6,23 @@ __all__ = ["insertBet", "removeBet", "getAllBets"]
 
 
 createBettingTableString = """
-                    CREATE TABLE bettingtest (
-                        id SERIAL PRIMARY KEY,
-                        userid VARCHAR,
-                        matchid INT,
-                        teamid INT,
-                        amount FLOAT
-                    );
-                    """
+    CREATE TABLE bettingtest (
+        id SERIAL PRIMARY KEY,
+        userid VARCHAR,
+        matchid INT,
+        teamid INT,
+        amount FLOAT
+    );
+"""
 
 createUserTableString = """
-                        CREATE TABLE bettingusers (
-                            userid VARCHAR,
-                            points FLOAT,
-                            PRIMARY KEY (userid)
-                        );
-                        """
+    CREATE TABLE bettingusers (
+        userid VARCHAR,
+        points FLOAT,
+        PRIMARY KEY (userid)
+    );
+"""
+
 
 def __init__():
     with datacon.cursor() as curs:
