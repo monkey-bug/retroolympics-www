@@ -1,6 +1,20 @@
 # The Retro Olympics web application
 
-## Running the Repository Inside a DevContainer
+## Running the application using Docker Compose
+
+### Prerequisites
+- **Docker**: Docker is used create and manage your development environments. Make sure Docker is installed and running on your system. Download Docker from [here](https://docs.docker.com/get-docker/). Up to date versions will include Docker Compose by default.
+
+### Starting the application
+In the project root directory, run `docker compose up`. This will build and run all available services (this will be slow for the first run). The frontend web application will be available at port `8000`, while the backend API is available at port `8001`.
+
+### Stopping the application
+In the project root directory, run `docker compose down`.
+
+### Managing dependencies
+For both the frontend and backend, dependencies are built into the image. This means when dependencies are added/updated, the Docker images need to be rebuilt. A rebuild can be forced by running `docker compose build --no-cache [service]`.
+
+## Running the application inside a DevContainer
 
 This guide will walk you through the steps to run this repository inside a Development Container (DevContainer) using Visual Studio Code (VS Code). DevContainers provide a fully configured development environment that can include specific versions of programming languages, extensions, and tools configured exactly as needed for a project.
 
@@ -20,27 +34,33 @@ This guide will walk you through the steps to run this repository inside a Devel
 
 4. **Start Developing**: Once the container is built and started, VS Code will connect to it. You can now start editing, running, and debugging your project just like you would on your local machine.
 
-## Additional Commands
+### Additional Commands
 
 - **Rebuild Container**: If you make changes to the devcontainer configuration, you may need to rebuild the container. You can do this by opening the Command Palette and selecting `Dev Containers: Rebuild Container`.
 
-## Setup the application locally
+## Run the application locally
+
 ### Setup the backend
 1. Install `python 3.12`, the instructions may vary by OS and distribution.
 2. Make sure you have `pip` installed and linked to correct version of python.
 3. Install the necessary python libraries with the following command: `pip install -r backend/requirements-combined.txt`
 
 ### Setup the frontend
-TODO
+1. Install `nodejs >=18.17`, the instructions may vary by OS and distribution.
+2. Install the `pnpm` package manager, either via your OS or by running `corepack enable` in the frontend directory.
+3. Install dependencies with `pnpm install`.
 
-## Run the application
-### Run the backend alone
+### Run the backend
 - Execute the following command: `invoke run-back` while in the folder that has tasks.py
-
-- Check the hello world endpoint: `http://127.0.0.1:5000/api/v1/hello/`
+- Check the hello world endpoint: `http://localhost:5000/api/v1/hello/`
 
 You should see the following response in your browser or a tool like postman:
 ```json
 {
   "message": "Hello World ! From the retro olympics backend !"
 }
+```
+
+### Run the frontend
+- Execute the following command to run a development server: `pnpm run dev`
+- Application will be available at `http://localhost:3000`
