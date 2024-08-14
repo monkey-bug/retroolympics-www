@@ -13,7 +13,7 @@ export default function Navbar() {
         }
     }
     return (
-        <div className="w-full bg-gray-900">
+        <div className="fixed w-full bg-gray-900">
             <nav>
                 <ul className="flex h-16 items-center justify-between text-2xl text-blue-500">
                     <li>
@@ -67,17 +67,9 @@ export default function Navbar() {
                     <li>
                         <Link
                             className="rounded bg-gray-600 px-2 py-1 hover:bg-gray-700"
-                            href="/"
+                            href="/volunteers"
                         >
                             Volunteers
-                        </Link>
-                    </li>
-                    <li>
-                        <Link
-                            className="rounded bg-gray-600 px-2 py-1 hover:bg-gray-700"
-                            href="/"
-                        >
-                            History
                         </Link>
                     </li>
                     {userElement()}

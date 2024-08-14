@@ -19,7 +19,9 @@ export default function RootLayout({
         <html lang="en">
             <body className={inter.className}>
                 <Navbar />
-                {children}
+                <main className="flex min-h-dvh flex-col items-center justify-center bg-[radial-gradient(75%_75%_at_50%_25%,rgba(0,0,0,0.7)_0%,rgb(0,0,0,0.95)_100%)] bg-fixed px-16 pt-[100px] text-center text-white">
+                    {children}
+                </main>
             </body>
         </html>
     );
