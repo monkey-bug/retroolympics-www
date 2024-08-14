@@ -5,6 +5,8 @@ services:
   frontend:
     build: ./frontend
     volumes:
+      - nextjs-cache:/workspace/.next
+      - node-modules:/workspace/node_modules
       - ./frontend:/workspace:cached
     working_dir: /workspace
     command: pnpm run dev
@@ -38,3 +40,5 @@ services:
 
 volumes:
   postgres-data:
+  nextjs-cache:
+  node-modules:
