@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Roboto_Condensed } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/navbar";
 
-const inter = Inter({ subsets: ["latin"] });
+const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
     title: "Retro Olympics",
@@ -17,12 +17,11 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en">
-            <body className={inter.className}>
-                <Navbar />
+            <body className={roboto.className}>
                 <main
                     className="flex min-h-dvh flex-col items-center justify-center
                         bg-[radial-gradient(75%_75%_at_50%_25%,rgba(0,0,0,0.7)_0%,rgb(0,0,0,0.95)_100%)]
-                        bg-fixed px-16 pt-[100px] text-center text-white"
+                        bg-fixed px-16 pt-16 text-center text-white"
                 >
                     {children}
                 </main>

@@ -3,23 +3,50 @@ import Link from "next/link";
 import Image from "next/image";
 
 // TODO: mobile menu
-// TODO: olympics/colosso specific styling
 
-export default function Navbar() {
+function capitalize(s: string) {
+    return s[0].toUpperCase() + s.slice(1);
+}
+
+function renderOlympicsNav() {
     const userName = cookies().get("user");
+
+    return [
+        { href: "/", title: "Teams" },
+        { href: "/", title: "Standings" },
+        { href: "/", title: "Schedule" },
+        { href: "/", title: "Games" },
+        { href: "/", title: userName != undefined ? userName.value : "USER", },
+    ].map((link) => (
+        <Link
+            className="flex h-1/2 items-center px-4 underline decoration-transparent underline-offset-2
+                transition hover:decoration-white"
+            href={link.href}
+        >
+            {link.title}
+        </Link>
+    ));
+}
+
+function renderColossoNav() {
+    return <p className="flex h-1/2 items-center px-4 text-neutral-500">Sign-Ups Coming Soon!</p>;
+}
+
+export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
+    const otherSite = site == "olympics" ? "colosso" : "olympics";
 
     return (
         <header
-            className="fixed flex h-16 w-full items-center justify-between bg-black/60 text-white
+            className="fixed inset-0 flex h-16 w-full items-center justify-between bg-black/60 text-white
                 backdrop-blur"
         >
             <div className="flex items-center">
                 <div className="group border-r-2 border-white/20">
-                    <Link href="/">
+                    <Link href={`/${site}`}>
                         <Image
                             className="min-w-16 hover:drop-shadow-[0_0_4px_white]"
-                            src="/img/logo/olympics.png"
-                            alt="Retro Olympics"
+                            src={`/img/logo/${site}.png`}
+                            alt={`Retro ${capitalize(site)}`}
                             width={64}
                             height={64}
                         />
@@ -28,11 +55,11 @@ export default function Navbar() {
                         className="absolute left-[calc(-4rem-2px)] top-16 flex flex-col border-r-2 border-white/20
                             bg-black/60 backdrop-blur transition-[left] group-hover:left-0"
                     >
-                        <Link href="/colosso">
+                        <Link href={`/${otherSite}`}>
                             <Image
                                 className="hover:drop-shadow-[0_0_4px_white]"
-                                src="/img/logo/colosso.png"
-                                alt="Retro Colosso"
+                                src={`/img/logo/${otherSite}.png`}
+                                alt={`Retro ${capitalize(otherSite)}`}
                                 width={64}
                                 height={64}
                             />
@@ -47,32 +74,13 @@ export default function Navbar() {
                         sm:text-3xl"
                 >
                     Retro
-                    <span className="mt-[-0.5rem] text-olympics sm:mt-0">
-                        Olympics
+                    <span className={`mt-[-0.5rem] sm:mt-0 text-${site}`}>
+                        {capitalize(site)}
                     </span>
                 </Link>
             </div>
             <nav className="flex h-full items-center justify-center divide-x-2 divide-white/20">
-                {[
-                    { href: "/", title: "Teams" },
-                    { href: "/", title: "Standings" },
-                    { href: "/", title: "Schedule" },
-                    { href: "/", title: "Games" },
-                    { href: "/betting", title: "Betting" },
-                    { href: "/volunteers", title: "Volunteers" },
-                    {
-                        href: "/",
-                        title: userName != undefined ? userName.value : "USER",
-                    },
-                ].map((link) => (
-                    <Link
-                        className="flex h-1/2 items-center px-4 underline decoration-transparent underline-offset-2
-                            transition hover:decoration-white"
-                        href={link.href}
-                    >
-                        {link.title}
-                    </Link>
-                ))}
+                {site == "olympics" ? renderOlympicsNav() : renderColossoNav()}
             </nav>
         </header>
     );
