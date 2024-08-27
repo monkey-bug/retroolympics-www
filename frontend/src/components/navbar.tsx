@@ -47,7 +47,7 @@ export default function Navbar() {
                         sm:text-3xl"
                 >
                     Retro
-                    <span className="mt-[-0.5rem] text-[#0028ee] sm:mt-0">
+                    <span className="mt-[-0.5rem] text-olympics sm:mt-0">
                         Olympics
                     </span>
                 </Link>

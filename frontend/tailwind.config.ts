@@ -6,7 +6,15 @@ const config: Config = {
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     ],
-    theme: { extend: {} },
+    theme: {
+        extend: {
+            colors: {
+                olympics: "#0028ee",
+                colosso: "#cb9800",
+            }
+        }
+    },
     plugins: [],
 };
+
 export default config;
