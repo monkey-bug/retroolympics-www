@@ -6,9 +6,9 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
-            <Navbar site="olympics"/>
+        <>
+            <Navbar site="olympics" />
             {children}
-        </div>
+        </>
     );
 }

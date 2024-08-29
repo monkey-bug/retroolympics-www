@@ -34,6 +34,7 @@ function renderColossoNav() {
 
 export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
     const otherSite = site == "olympics" ? "colosso" : "olympics";
+    const textClass = site == "olympics" ? "text-olympics" : "text-colosso";
 
     return (
         <header
@@ -74,7 +75,7 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                         sm:text-3xl"
                 >
                     Retro
-                    <span className={`mt-[-0.5rem] sm:mt-0 text-${site}`}>
+                    <span className={`mt-[-0.5rem] sm:mt-0 ${textClass}`}>
                         {capitalize(site)}
                     </span>
                 </Link>
