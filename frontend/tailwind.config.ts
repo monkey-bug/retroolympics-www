@@ -15,7 +15,7 @@ const config: Config = {
             fontFamily: {
                 farray: ["Farray", "sans"],
             },
-        }
+        },
     },
     plugins: [],
 };

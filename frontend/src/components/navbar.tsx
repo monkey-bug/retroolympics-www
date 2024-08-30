@@ -16,7 +16,7 @@ function renderOlympicsNav() {
         { href: "/", title: "Standings" },
         { href: "/", title: "Schedule" },
         { href: "/", title: "Games" },
-        { href: "/", title: userName != undefined ? userName.value : "USER", },
+        { href: "/", title: userName != undefined ? userName.value : "USER" },
     ].map((link) => (
         <Link
             className="flex h-1/2 items-center px-4 underline decoration-transparent underline-offset-2
@@ -29,7 +29,11 @@ function renderOlympicsNav() {
 }
 
 function renderColossoNav() {
-    return <p className="flex h-1/2 items-center px-4 text-neutral-500">Sign-Ups Coming Soon!</p>;
+    return (
+        <p className="flex h-1/2 items-center px-4 text-neutral-500">
+            Sign-Ups Coming Soon!
+        </p>
+    );
 }
 
 export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
@@ -38,8 +42,8 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
 
     return (
         <header
-            className="fixed inset-0 flex h-16 w-full items-center justify-between bg-black/60 text-white
-                backdrop-blur"
+            className="fixed inset-0 flex h-16 w-full items-center justify-between bg-black/60
+                text-white backdrop-blur"
         >
             <div className="flex items-center">
                 <div className="group border-r-2 border-white/20">
@@ -69,10 +73,10 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                 </div>
                 <Link
                     href="/"
-                    className="ml-4 flex h-full flex-col flex-wrap items-start justify-center text-2xl
-                        uppercase underline decoration-transparent decoration-1 underline-offset-2
-                        transition hover:decoration-white sm:flex-row sm:flex-nowrap sm:items-center
-                        sm:text-3xl font-farray"
+                    className="ml-4 flex h-full flex-col flex-wrap items-start justify-center font-farray
+                        text-2xl uppercase underline decoration-transparent decoration-1
+                        underline-offset-2 transition hover:decoration-white sm:flex-row sm:flex-nowrap
+                        sm:items-center sm:text-3xl"
                 >
                     Retro
                     <span className={`mt-[-0.5rem] sm:mt-0 ${textClass}`}>

@@ -1,3 +1,3 @@
 export default function OlympicsHome() {
-    return <p>Olympics!</p>
+    return <p>Olympics!</p>;
 }
