@@ -11,7 +11,10 @@ const config: Config = {
             colors: {
                 olympics: "#0028ee",
                 colosso: "#cb9800",
-            }
+            },
+            fontFamily: {
+                farray: ["Farray", "sans"],
+            },
         }
     },
     plugins: [],

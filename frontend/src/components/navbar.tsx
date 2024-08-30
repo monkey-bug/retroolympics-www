@@ -72,7 +72,7 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                     className="ml-4 flex h-full flex-col flex-wrap items-start justify-center text-2xl
                         uppercase underline decoration-transparent decoration-1 underline-offset-2
                         transition hover:decoration-white sm:flex-row sm:flex-nowrap sm:items-center
-                        sm:text-3xl"
+                        sm:text-3xl font-farray"
                 >
                     Retro
                     <span className={`mt-[-0.5rem] sm:mt-0 ${textClass}`}>

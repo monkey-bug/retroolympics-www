@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "Farray";
+    src: url("../../public/font/farray.otf");
+    ascent-override: 85%;
+}

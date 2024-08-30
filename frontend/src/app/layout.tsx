@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto_Condensed } from "next/font/google";
-import "./globals.css";
-import Navbar from "@/components/navbar";
+import "./global.css";
 
 const roboto = Roboto_Condensed({ subsets: ["latin"] });
 
@@ -21,7 +20,7 @@ export default function RootLayout({
                 <main
                     className="flex min-h-dvh flex-col items-center justify-center
                         bg-[radial-gradient(75%_75%_at_50%_25%,rgba(0,0,0,0.7)_0%,rgb(0,0,0,0.95)_100%)]
-                        bg-fixed px-16 pt-16 text-center text-white"
+                        bg-fixed px-16 py-16 text-center text-white"
                 >
                     {children}
                 </main>
