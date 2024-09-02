@@ -1,3 +1,10 @@
+import { WrenchScrewdriverIcon } from "@heroicons/react/24/solid";
+
 export default function OlympicsHome() {
-    return <p>Olympics!</p>;
+    return (
+        <>
+            <WrenchScrewdriverIcon className="max-w-16 pb-4" />
+            <p>Under Construction!</p>
+        </>
+    );
 }

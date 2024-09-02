@@ -13,11 +13,14 @@ function renderOlympicsNav() {
     const userName = cookies().get("user");
 
     return [
-        { href: "/", title: "Teams" },
-        { href: "/", title: "Standings" },
-        { href: "/", title: "Schedule" },
-        { href: "/", title: "Games" },
-        { href: "/", title: userName != undefined ? userName.value : "USER" },
+        { href: "/olympics", title: "Teams" },
+        { href: "/olympics", title: "Standings" },
+        { href: "/olympics", title: "Schedule" },
+        { href: "/olympics", title: "Games" },
+        {
+            href: "/olympics",
+            title: userName != undefined ? userName.value : "USER",
+        },
     ].map((link, i) => (
         <Link
             className="flex h-1/2 items-center px-4 underline decoration-transparent underline-offset-2
@@ -59,8 +62,8 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                         />
                     </Link>
                     <div
-                        className="absolute left-[calc(-4rem-2px)] top-16 flex flex-col border-r-2 border-white/20
-                            bg-black/60 backdrop-blur transition-[left] duration-250 group-hover:left-0"
+                        className="duration-250 absolute left-[calc(-4rem-2px)] top-16 flex flex-col border-r-2
+                            border-white/20 bg-black/60 backdrop-blur transition-[left] group-hover:left-0"
                     >
                         <Link href={`/${otherSite}`}>
                             <Image
@@ -72,7 +75,7 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                             />
                         </Link>
                         <Link href="/">
-                            <HomeIcon className="w-[64px] h-[64px] p-4 hover:drop-shadow-[0_0_4px_white]" />
+                            <HomeIcon className="h-[64px] w-[64px] p-4 hover:drop-shadow-[0_0_4px_white]" />
                         </Link>
                     </div>
                 </div>
@@ -80,8 +83,8 @@ export default function Navbar({ site }: { site: "olympics" | "colosso" }) {
                     href="/"
                     className="ml-4 flex h-full flex-col flex-wrap items-start justify-center font-farray
                         text-2xl uppercase underline decoration-transparent decoration-1
-                        underline-offset-[6px] transition hover:decoration-white sm:flex-row sm:flex-nowrap
-                        sm:items-center sm:text-3xl"
+                        underline-offset-[6px] transition hover:decoration-white sm:flex-row
+                        sm:flex-nowrap sm:items-center sm:text-3xl"
                 >
                     Retro
                     <span className={`mt-[-0.5rem] sm:mt-0 ${textClass}`}>
