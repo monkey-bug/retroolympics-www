@@ -77,8 +77,8 @@ function renderTeam(team: string, members: string[]) {
             <h1 className="text-2xl">{team}</h1>
             <hr className="mb-2 text-white" />
             <div className="flex flex-wrap items-center justify-center gap-4">
-                {members.map((member) => (
-                    <div className="flex w-[100px] flex-col items-center justify-center gap-2">
+                {members.map((member, i) => (
+                    <div className="flex w-[100px] flex-col items-center justify-center gap-2" key={i}>
                         <RAUser username={member} />
                         <p>{member}</p>
                     </div>

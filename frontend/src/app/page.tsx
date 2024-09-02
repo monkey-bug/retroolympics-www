@@ -28,10 +28,14 @@ export default function Home() {
                         height={425}
                     />
                     <span className="text-lg">New Season 2025</span>
-                    <img
+                    <Image
                         className="fixed left-0 top-[-50vh] -z-10 h-[150vh] w-screen object-cover opacity-0
                             transition-opacity duration-500 group-hover:opacity-100"
                         src="/img/olympics-landing.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
                     />
                 </Link>
                 <Link
@@ -55,10 +59,14 @@ export default function Home() {
                         height={425}
                     />
                     <span className="text-lg">Coming soon!</span>
-                    <img
+                    <Image
                         className="fixed left-0 top-[-50vh] -z-10 h-[150vh] w-screen object-cover opacity-0
                             transition-opacity duration-500 group-hover:opacity-100"
                         src="/img/colosso-landing.png"
+                        width={0}
+                        height={0}
+                        sizes="100vw"
+                        alt=""
                     />
                 </Link>
             </div>
