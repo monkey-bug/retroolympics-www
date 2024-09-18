@@ -19,7 +19,7 @@ services:
     volumes:
       - ./backend:/workspace:cached
     working_dir: /workspace
-    command: invoke run-back #TODO: switch to wsgi for prod
+    command: invoke run-back-debug #TODO: switch to wsgi for prod
     stop_signal: SIGINT
     restart: unless-stopped
     ports:

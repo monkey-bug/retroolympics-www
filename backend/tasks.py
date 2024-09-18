@@ -20,3 +20,8 @@ def update_combined_reqs(c):
 @task
 def run_back(c):
     get_api().run("0.0.0.0")
+
+
+@task
+def run_back_debug(c):
+    get_api().run("0.0.0.0", debug=True)

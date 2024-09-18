@@ -3,6 +3,7 @@ from flask import Flask
 from api.components.betting import betting_api
 from api.components.hello import hello_api
 from api.components.matches import matches_api
+from api.components.user import user_api
 
 api: Flask | None = None
 
@@ -15,5 +16,6 @@ def get_api() -> Flask:
         api.register_blueprint(hello_api)
         api.register_blueprint(betting_api)
         api.register_blueprint(matches_api)
+        api.register_blueprint(user_api)
 
     return api
