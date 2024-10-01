@@ -28,3 +28,9 @@ INSERT INTO teams_users (team_id, user_id) VALUES
 (3, 7),
 (3, 8),
 (3, 9);
+
+INSERT INTO games VALUES
+(1, 'Super Mario All-Stars', 'SNES', 'Fastest time to beat 1-1 in all four games.', '53c038150ba00d5f8d8574b4d36283f2'),
+(2, 'Grand Theft Auto: San Andreas', 'PS2', 'Fastest time to clear Wrong Side of the Tracks.', 'fe8b1b6c64c24e7eaaef6de8af1aeb9e'),
+(3, 'Super Dodge Ball', 'Fightcade', 'One match (in-game Bo3) with the team of your choice against your opponent.', NULL);
+
