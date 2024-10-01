@@ -7,30 +7,26 @@ user_table_schema = """
         id BIGINT PRIMARY KEY,
         username TEXT UNIQUE NOT NULL,
         points BIGINT DEFAULT 1000,
-        roles BIT(5)
+        roles BIT(6)
     );
 """
 
 
 class Role(IntFlag):
-    HOST = auto()
-    ADMIN = auto()
-    REFEREE = auto()
-    GAMETESTER = auto()
     COMPETITOR = auto()
+    GAMETESTER = auto()
+    STREAMTEAM = auto()
+    REFEREE = auto()
+    ADMIN = auto()
+    HOST = auto()
 
 
 class User:
-    id = 0
-    username = ""
-    points = 0
-    roles = 0
-
     def __init__(self, id, username, points, roles):
         self.id = id
         self.username = username
         self.points = points
-        self.roles = roles
+        self.roles = int(roles, 2)
 
 
 def __init__():
@@ -41,9 +37,15 @@ def __init__():
             print(error)
 
 
+def get_all_users():
+    with dbconn.cursor() as curs:
+        curs.execute("SELECT * FROM users;")
+        return [User(*data) for data in curs.fetchall()]
+
+
 def get_user(id):
     with dbconn.cursor() as curs:
-        curs.execute("SELECT * FROM users WHERE id=%s;", id)
+        curs.execute("SELECT * FROM users WHERE id=%s;", (id,))
         return User(*curs.fetchall()[0])
 
 

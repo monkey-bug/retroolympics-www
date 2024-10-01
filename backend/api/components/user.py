@@ -1,5 +1,4 @@
 from flask import Blueprint, Response, jsonify
-from base64 import urlsafe_b64decode
 
 from api.consts import COMMON_API_PREFIX
 from api.model.user import get_user, get_user_by_username
@@ -20,10 +19,10 @@ def api_get_user(user):
         return Response(str(e), 500)
 
 
-@user_api.route("/id/<b64id>", methods=["GET"])
-def api_get_user_id(b64id):
+@user_api.route("/id/<id>", methods=["GET"])
+def api_get_user_id(id):
     try:
-        return jsonify(vars(get_user(urlsafe_b64decode(b64id))))
+        return jsonify(vars(get_user(int(id))))
     except Exception as e:
         print(e)
         return Response(str(e), 500)

@@ -24,4 +24,4 @@ def run_back(c):
 
 @task
 def run_back_debug(c):
-    get_api().run("0.0.0.0", debug=True)
+    get_api(seed=True).run("0.0.0.0", debug=True)
