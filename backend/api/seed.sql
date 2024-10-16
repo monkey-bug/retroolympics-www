@@ -34,3 +34,8 @@ INSERT INTO games VALUES
 (2, 'Grand Theft Auto: San Andreas', 'PS2', 'Fastest time to clear Wrong Side of the Tracks.', 'fe8b1b6c64c24e7eaaef6de8af1aeb9e'),
 (3, 'Super Dodge Ball', 'Fightcade', 'One match (in-game Bo3) with the team of your choice against your opponent.', NULL);
 
+INSERT INTO matches VALUES
+(1, B'00', NULL, '', 1, 2, 1, NULL),
+(2, B'10', '1:23.45', '6:78.90', 3, 5, 2, NULL),
+(3, B'01', '3 (Kunio)', '1 (Kenji)', 6, 7, 3, NULL),
+(4, B'11', 'DNF', 'DQ', 8, 9, 1, NULL);
